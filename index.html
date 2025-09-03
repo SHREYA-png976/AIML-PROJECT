@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f6f9; }
+        h2 { color: #333; }
+        form { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 400px; }
+        input { margin: 10px 0; padding: 8px; width: 95%; }
+        button { background: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; font-size: 18px; color: green; }
+    </style>
+</head>
+<body>
+    <h2>🏡 House Price Prediction</h2>
+    <form method="POST" action="/predict">
+        <input type="number" name="LotArea" placeholder="Lot Area" required>
+        <input type="number" name="OverallQual" placeholder="Overall Quality (1-10)" required>
+        <input type="number" name="YearBuilt" placeholder="Year Built" required>
+        <input type="number" name="GrLivArea" placeholder="Living Area (sqft)" required>
+        <input type="number" name="FullBath" placeholder="Full Bathrooms" required>
+        <input type="number" name="GarageCars" placeholder="Garage Cars" required>
+        <input type="number" name="GarageArea" placeholder="Garage Area (sqft)" required>
+        <button type="submit">Predict Price</button>
+    </form>
+    {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</body>
+</html>
