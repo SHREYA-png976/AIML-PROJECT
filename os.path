@@ -1,7 +1,1 @@
-import os
-import joblib
 
-base_path = os.path.dirname(__file__)
-model_path = os.path.join(base_path, "house_price_model.pkl")
-
-model = joblib.load(model_path)
